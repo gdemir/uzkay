@@ -1,0 +1,52 @@
+<h2 id="headline">EBELİK LİSANS TAMAMLAMA ÖN KAYIT BAŞVURU SORGULA</h2>
+<p>Ön kayıt başvuru çıktısını almak için, lütfen kayıt sırasında verdiğiniz 
+  bilgilere dayalı olarak aşağıda istenen <strong>tüm bilgileri</strong> 
+  doldurun.  <strong>DİKKAT!  Bu ön kayıt sorgulama formu Ebelik Lisans 
+    Tamamlama Programına YENİ başvuracak adaylar içindir.</p>
+<form name="login" action="sorguyap" method="POST" id="login" 
+  enctype="multipart/form-data">
+  <table class="custom">
+    <tr>
+      <td>
+        <h2 id="headline">SORGU</h2>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">TC Kimlik No (*):</td>
+      <td class="field"><input class="required" type="text" name="tc" id= "tc" 
+        value="{{@REQUEST.tc}}" maxlength = 11  /></td>
+    </tr>
+    <tr>
+      <td class="label">Kızlık Soyadı (*):</dt>
+        <td class="field">
+          <input class="required" type="text" name = "kizliksoyad" id = 
+          "kizliksoyad" value="{{@REQUEST.kizliksoyad}}"  />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Onay Kodu (*):</td>
+        <td class="field">
+          <input class="required" type="text"
+          name="captcha" id="captcha" size=30/>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="captcha">
+          <img src="captcha" alt="Güvenlik Resmi" title="Güvenlik Resmi -
+          Güncellemek için lütfen tıklayın"/>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          Resimdeki güvenlik kodunu girin.
+          Yenilemek için resme tıklayın.
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input id="submit_button" type="submit" value="Sorgula" /></td>
+      </tr>
+    </table>
+</form>

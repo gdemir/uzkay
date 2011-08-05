@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml" xml:lang = "TR" lang = "tr">
+    <title>{{@title}}</title>
+    <head>
+      <meta http-equiv = "Pragma" content = "no-cache" />
+      <meta http-equiv = "Expires" content = "-1" />
+      <meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
+      <link rel = "stylesheet" type = "text/css" href = "gui/css/admin.css" />
+      <link rel = "stylesheet" type = "text/css" href = "gui/css/flash.css" />
+      <link rel = "stylesheet" type = "text/css" href = "gui/css/login.css" />
+      <link rel = "stylesheet" type = "text/css" href = "gui/css/style.css" />
+<!--
+      <script src="gui/js/jquery.captchaRefresh.js" 
+        type="text/javascript"></script>
+      <script>
+        $(document).ready(function(){
+                {
+                $("#login").validate();
+                jQuery('#captcha').captchaRefresh({
+                    {
+			src: 'captcha',
+			title: 'Güvenlik Resmi - Güncellemek için lütfen tıklayın',
+                    }
+                  });
+              }
+            });
+          </script>
+-->
+</head>
+<body>
+  <div id="banner">
+    <img src="gui/images/logo.png" style="margin-top:15px;"/>
+  </div>
+
+  <F3:check if="{{@correct}}">
+  <F3:true>
+    <div id="notice"><p class="success">{{@correct}}</p></div>
+  </F3:true>
+  </F3:check>
+
+  <F3:check if="{{@error}}">
+  <F3:true>
+    <div id="notice"><p class="fail">{{@error}}</p></div>
+  </F3:true>
+  </F3:check>
+
+  <div id="content">
+    <F3:include href="{{@template}}.htm"/>
+  </div>
+  <div id="info">
+    Kayıt sırasında oluşan teknik sorunlar için aşağıdaki irtibat bilgilerini kullanabilirsiniz.<br/>
+    Görüntüleme sorunlarını önlemek için lütfen güncel bir tarayıcı (IE 8, Firefox, Chromium veya Opera) kullanın.<br />
+    <strong>Santral:</strong> 0 362 312 19 19
+    <strong>Dahili No:</strong> 2012
+    <strong>Santral No:</strong> 2010
+    <strong>E-posta:</strong> irtibat@uzem.omu.edu.tr<br/>
+    <a href = "http://uzem.omu.edu.tr">ondokuzmayıs üniversitesi / uzaktan 
+      eğitim uygulama ve araştırma merkezi &copy; 2011</a>
+  </div>
+  <div id="footer">
+
+  </div>
+</body>
+</html>

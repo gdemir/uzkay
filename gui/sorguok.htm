@@ -1,0 +1,70 @@
+<style>
+  table.login td.label {width: 275px;}
+  table.login td.field {width: 275px;}
+</style>
+
+
+<form action="sorgucikti">
+    <h2 id="headline">ÖN KAYIT BİLGİLERİNİZ</h2>
+    <table class="login">
+
+
+      <tr>
+        <td><h2 id="headline">Kişisel bilgiler</h2></td>
+        <td></td>
+      </tr>
+      <F3:repeat group='{{@SESSION.kisisel}}' key='{{@gnl}}' value='{{@blg}}'>
+        <tr>
+          <td class="label" style="border-top:0px solid;">{{@gnl}}</td>
+          <td class="field">{{@blg}}</td>
+        </tr>
+      </F3:repeat>
+
+      <tr>
+        <td><h2 id="headline">İletişim bilgiler</h2></td>
+        <td></td>
+      </tr>
+      <F3:repeat group='{{@SESSION.iletisim}}' key='{{@gnl}}' value='{{@blg}}'>
+        <tr>
+          <td class="label" style="border-top:0px solid;">{{@gnl}}</td>
+          <td class="field">{{@blg}}</td>
+        </tr>
+      </F3:repeat>
+
+      <tr>
+        <td><h2 id="headline">İş bilgiler</h2></td>
+        <td></td>
+      </tr>
+      <F3:repeat group='{{@SESSION.is}}' key='{{@gnl}}' value='{{@blg}}'>
+        <tr>
+          <td class="label" style="border-top:0px solid;">{{@gnl}}</td>
+          <td class="field">{{@blg}}</td>
+        </tr>
+      </F3:repeat>
+
+      <tr>
+        <td><h2 id="headline">Diğer bilgiler</h2></td>
+        <td></td>
+      </tr>
+      <F3:repeat group='{{@SESSION.diger}}' key='{{@gnl}}' value='{{@blg}}'>
+        <tr>
+          <td class="label" style="border-top:0px solid;">{{@gnl}}</td>
+          <td class="field">{{@blg}}</td>
+        </tr>
+        </F3:repeat>
+    </table>
+    <br/>
+    Lütfen ön kayıt bilgilerinizin bir kopyasını edinmek için tıklayın :
+    <input id="submit_button" type="submit" value="kayıt bilgisi" 
+    style="margin-top:-20px;margin-left:400px;"/>
+</form>
+
+<p>
+  <strong style="color:green">Kesin kayıdınızı </strong> yapmak için
+  <a 
+    href="http://sinav.omu.edu.tr/kesin/kayit">http://sinav.omu.edu.tr/kesin/kayit</a> 
+  adresini ziyaret ediniz.
+</p>
+<p>
+
+</p>
