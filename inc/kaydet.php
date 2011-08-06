@@ -50,9 +50,11 @@ if (! F3::exists('error')) {
 	F3::set('tc', $tc);
 
 	if (! empty($tc)) {
-		$resim = F3::get('uploaddir') . $kul->tc . '.jpg';
+		$resim = $kul->tc . '.jpg';
+		$kul->photo = $resim;
+		$path = F3::get('uploaddir') . $resim;
 		// resimi yukleyip denetleyelim
-		yukle($resim);
+		yukle($path);
 	}
 
 	if (! F3::exists('error')) {

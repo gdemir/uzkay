@@ -28,5 +28,6 @@ create table if not exists kul (
   tarih DATE,
   saat TIME,
   dogumulke varchar(64),
+  photo varchar(128),
   PRIMARY KEY(id)
 );

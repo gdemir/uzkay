@@ -7,11 +7,14 @@
 <form action="sorgucikti">
     <h2 id="headline">ÖN KAYIT BİLGİLERİNİZ</h2>
     <table class="login">
-
-
       <tr>
         <td><h2 id="headline">Kişisel bilgiler</h2></td>
         <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><img src="{{@uploaddir}}/{{@SESSION.tc}}.jpg" width="128px" 
+          height="128px"/></td>
       </tr>
       <F3:repeat group='{{@SESSION.kisisel}}' key='{{@gnl}}' value='{{@blg}}'>
         <tr>
