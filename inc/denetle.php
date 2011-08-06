@@ -51,9 +51,9 @@ function is_tc($tc) {
 	);
 
 	// $on ve $onbir set edilmeden yola devam etmek yok.
-	if (!(isset($on) && isset($onbir)) return false;
+	if (!isset($on) || !isset($onbir)) return false;
 
-// son iki haneyi (on ve onbirinci) kontrol et
+	// son iki haneyi (on ve onbirinci) kontrol et
 	return substr($tc, -2) == ($on < 0 ? 10 + $on : $on) . $onbir;
 }
 
