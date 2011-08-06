@@ -33,8 +33,8 @@ function validateAllSteps(){
 
   return isStepValid;
 }
-function step_message(step, section) {
-  if(step == false ){
+function step_message(step, stepvalidate, section) {
+  if(stepvalidate == false ){
     $('#wizard').smartWizard('showMessage',
         'Lütfen <b>'+section+'</b> bölümündeki hataları düzeltin '+
         've <b>Sonraki</b> tuşuna tıklayın.'
@@ -73,13 +73,13 @@ function control(verilen, tarif) {
 function validateSteps(step){
   var isStepValid = true;
   if(step == 1) // validate step 1
-    isStepValid = step_message(validateStep1(), "Kişisel Bilgiler");
+    isStepValid = step_message(step, validateStep1(), "Kişisel Bilgiler");
   if(step == 2) // validate step 2
-    isStepValid = step_message(validateStep2(), "İletişim Bilgiler");
+    isStepValid = step_message(step, validateStep2(), "İletişim Bilgiler");
   if(step == 3) // validate step 3
-    isStepValid = step_message(validateStep3(), "İş Bilgiler");
+    isStepValid = step_message(step, validateStep3(), "İş Bilgiler");
   if(step == 4) // validate step 3
-    isStepValid = step_message(validateStep4(), "Diğer Bilgiler");
+    isStepValid = step_message(step, validateStep4(), "Diğer Bilgiler");
   return isStepValid;
 }
 function validateStep1(){
