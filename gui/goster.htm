@@ -6,7 +6,7 @@
   // kaynak : https://gist.github.com/1037675
     function is_tc(tc) {
       var tc, on, onbir;
-      // if (Number(tc.length) != 11) return false;
+      if (tc.length != 11) return false;
 
       on =
         ((((Number(tc[0]))+Number(tc[2])+Number(tc[4])+Number(tc[6])+Number(tc[8]))*7)
@@ -25,9 +25,9 @@
     }
     $(document).ready(function(){
     	// Smart Wizard
-  		$('#wizard').smartWizard({transitionEffect:'slideleft',onLeaveStep:leaveAStepCallback,onFinish:onFinishCallback,enableFinishButton:true});
+        $('#wizard').smartWizard({transitionEffect:'slideleft',onLeaveStep:leaveAStepCallback,onFinish:onFinishCallback,enableFinishButton:true});
       function leaveAStepCallback(obj){
-        var step_num= obj.attr('rel');
+        var step_num=obj.attr('rel');
         return validateSteps(step_num);
       }
       function onFinishCallback(){
@@ -38,37 +38,43 @@
 	});
     function validateAllSteps(){
        var isStepValid = true;
-       
+
        if(validateStep1() == false){
          isStepValid = false;
-         $('#wizard').smartWizard('setError',{stepnum:1,iserror:true});         
+         $('#wizard').smartWizard('setError',{stepnum:1,iserror:true});
        }else{
          $('#wizard').smartWizard('setError',{stepnum:1,iserror:false});
        }
-       
        if(validateStep2() == false){
          isStepValid = false;
-         $('#wizard').smartWizard('setError',{stepnum:2,iserror:true});         
+         $('#wizard').smartWizard('setError',{stepnum:2,iserror:true});
        }else{
          $('#wizard').smartWizard('setError',{stepnum:2,iserror:false});
        }
-       
+
        if(!isStepValid){
           $('#wizard').smartWizard('showMessage','Please correct the errors in the steps and continue');
        }
-              
+
        return isStepValid;
-    } 	
-	function step_message(step, section) {
-		if(step == false ){
-			$('#wizard').smartWizard('showMessage','Lütfen <b>'+section+'</b> bölümündeki hataları düzeltin ve <b>Sonraki</b> tuşuna tıklayın.');
-			$('#wizard').smartWizard('setError',{stepnum:step,iserror:true});
-			return false; 
-		}else{
-			$('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
-			return true;
-		}
-	}
+    }
+    function step_message(step, section) {
+      if(step == false ){
+        $('#wizard').smartWizard('showMessage',
+            'Lütfen <b>'+section+'</b> bölümündeki hataları düzeltin'+
+            've <b>Sonraki</b> tuşuna tıklayın.'
+        );
+        $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});
+        return false;
+      }else{
+        $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
+        return true;
+      }
+    }
+
+    function error_message(message) {
+        return '<div class="error">'+message+'</div>';
+    }
 
     function validateSteps(step){
         var isStepValid = true;
@@ -87,13 +93,19 @@
        var un = $('#tc').val();
        if(!un && un.length <= 0){
          isValid = false;
-         $('#msg_tc').html('<div class="error">Tc Kimlik Numarası doldurulması zorunludur</div>').show();
+         $('#msg_tc').html(error_message(
+           'Tc Kimlik Numarası doldurulması zorunludur'
+         )).show();
        }else if(un.length != 11){
          isValid = false;
-         $('#msg_tc').html('<div class="error">Tc Kimlik Numarası 11 haneli olmalıdır</div>').show();
+         $('#msg_tc').html(error_message(
+           'Tc Kimlik Numarası 11 haneli olmalıdır'
+         )).show();
        }else if(!is_tc(un)){
-		   isValid = false;
-         $('#msg_tc').html('<div class="error">Geçerli bir Tc kimlik Numarası değil</div>').show();
+         isValid = false;
+         $('#msg_tc').html(error_message(
+           'Geçerli bir Tc kimlik Numarası değil'
+         )).show();
        }else{
          $('#msg_tc').html('').hide();
        }
@@ -106,24 +118,28 @@
        if(email && email.length > 0){
          if(!isValidEmailAddress(email)){
            isValid = false;
-           $('#msg_email').html('<div class="error">Geçerli bir email değil</div>').show();           
-         }else{
+           $('#msg_email').html(error_message(
+             'Geçerli bir email değil'
+           )).show();
+       }else{
           $('#msg_email').html('').hide();
          }
        }else{
          isValid = false;
-         $('#msg_email').html('<div class="error">Email doldurulması zorunludur</div>').show();
-       }       
+         $('#msg_email').html(error_message(
+           'Email doldurulması zorunludur'
+         )).show();
+       }
       return isValid;
     }
-    
+
     // Email Validation
     function isValidEmailAddress(emailAddress) {
       var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
       return pattern.test(emailAddress);
-    } 
-    
-    
+    }
+
+
 </script>
 <style>
   table.custom td.label {width: 275px;}
