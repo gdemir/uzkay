@@ -4,27 +4,25 @@
 
 <script type="text/javascript">
   // kaynak : https://gist.github.com/1037675
-	function tcmi(tc) {
-        var tc, on, onbir;
-        tc = String(Number(tc.substring(0,1)) +
-                   Number(tc.substring(1,2)) +
-                   Number(tc.substring(2,3)) +
-                   Number(tc.substring(3,4)) +
-                   Number(tc.substring(4,5)) +
-                   Number(tc.substring(5,6)) +
-                   Number(tc.substring(6,7)) +
-                   Number(tc.substring(7,8)) +
-                   Number(tc.substring(8,9)) +
-                   Number(tc.substring(9,10))
-                   );
-        on = tc[tc.length - 1];
-        onbir = tc[tc.length];
-        if (!(on || onbir)) return false;
-        if(on + onbir == tc.substring(10,11))
-                return true;
-        else
-                return false;
-	}
+    function is_tc(tc) {
+      var tc, on, onbir;
+      // if (Number(tc.length) != 11) return false;
+
+      on =
+        ((((Number(tc[0]))+Number(tc[2])+Number(tc[4])+Number(tc[6])+Number(tc[8]))*7)
+        -(Number(tc[1])+Number(tc[3])+Number(tc[5])+Number(tc[7])))%10;
+      ;
+      onbir =
+        (Number(tc[0])+Number(tc[1])+Number(tc[2])+Number(tc[3])+Number(tc[4])+
+        Number(tc[5])+Number(tc[6])+Number(tc[7])+Number(tc[8])+Number(tc[9]))%10;
+
+      if (!on || !onbir) return false;
+
+      if (String(on) + String(onbir) == tc.substring(9,11))
+        return true;
+      else
+        return false;
+    }
     $(document).ready(function(){
     	// Smart Wizard
   		$('#wizard').smartWizard({transitionEffect:'slideleft',onLeaveStep:leaveAStepCallback,onFinish:onFinishCallback,enableFinishButton:true});
@@ -71,29 +69,29 @@
 			return true;
 		}
 	}
-		
-	function validateSteps(step){
-		var isStepValid = true;
-		// validate step 1
-		if(step == 1)
-			isStepValid = step_message(validateStep1(), "Kişisel Bilgiler");
-		// validate step 2
-		if(step == 2)
-			isStepValid = step_message(validateStep2(), "İletişim Bilgiler");
-		return isStepValid;
-	}
-		
-	function validateStep1(){
-       var isValid = true; 
+
+    function validateSteps(step){
+        var isStepValid = true;
+        // validate step 1
+        if(step == 1)
+            isStepValid = step_message(validateStep1(), "Kişisel Bilgiler");
+        // validate step 2
+        if(step == 2)
+            isStepValid = step_message(validateStep2(), "İletişim Bilgiler");
+        return isStepValid;
+    }
+
+    function validateStep1(){
+       var isValid = true;
        // Validate Tc
        var un = $('#tc').val();
        if(!un && un.length <= 0){
          isValid = false;
          $('#msg_tc').html('<div class="error">Tc Kimlik Numarası doldurulması zorunludur</div>').show();
        }else if(un.length != 11){
-		   isValid = false;
+         isValid = false;
          $('#msg_tc').html('<div class="error">Tc Kimlik Numarası 11 haneli olmalıdır</div>').show();
-       }else if(!tcmi(un)){
+       }else if(!is_tc(un)){
 		   isValid = false;
          $('#msg_tc').html('<div class="error">Geçerli bir Tc kimlik Numarası değil</div>').show();
        }else{
@@ -102,7 +100,7 @@
        return isValid;
     }
     function validateStep2(){
-      var isValid = true;    
+      var isValid = true;
       //validate email  email
       var email = $('#email').val();
        if(email && email.length > 0){
