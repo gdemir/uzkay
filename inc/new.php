@@ -324,8 +324,6 @@ F3::set('yillar', yillar());
 F3::set('iller', iller());
 F3::set('ulkeler', ulkeler());
 
-F3::set('title', 'Kayıt Formu');
-F3::set('template', 'goster');
-F3::call('layout');
+page('Kayıt Formu', 'new', 'layout');
 
 ?>

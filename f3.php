@@ -11,11 +11,11 @@ function layout()  { echo Template::serve('layout.htm');      }
 function captcha() { Graphics::captcha(150, 60, 5, 'jester'); }
 
 function ok()      { page('Kayıt yapıldı', 'ok', 'layout');   }
-function sorgu()   {
+function find()   {
 	F3::clear('SESSION.photo');
 	F3::clear('SESSION.tc');
         F3::clear('SESSION.kizliksoyad');
-	page('Sorgu Formu', 'sorgu', 'layout');
+	page('Sorgu Formu', 'find', 'layout');
 }
 function show() { page('Sorgu Yapıldı', 'show', 'layout'); }
 
@@ -29,7 +29,7 @@ F3::route("POST /save",    'save.php');
 F3::route("GET  /ok",      'ok');
 F3::route("GET  /pdf",     'pdf.php');
 
-F3::route("GET  /sorgu",   'sorgu');
+F3::route("GET  /sorgu",   'find');
 F3::route("POST /find",    'find.php');
 F3::route("GET  /show",    'show');
 
