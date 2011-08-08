@@ -75,6 +75,6 @@ if (! F3::exists('error')) {
 
 // hata var, dön başa ve tekrar sorgu al.
 // error alanı dolu ve layout.htm'de görüntülenecek
-F3::call('sorgu');
+F3::call('find');
 
 ?>
