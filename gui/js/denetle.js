@@ -154,8 +154,8 @@ function validateStep2(){
 
   require = {
     'evadres': 'Ev adresi',
-    'il':      'Çalışılan il',
-    'ilce':    'Çalışılan ilçe',
+    'il':      'İkametgah il',
+    'ilce':    'İkametgah ilçe',
     'uni':     'Üniversite',
     'yokul':   'Yüksek okul',
   };

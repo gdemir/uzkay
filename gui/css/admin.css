@@ -90,8 +90,8 @@ table.custom td.field {
 table.custom td.captcha {
     float: right;
     display: inline-block;
-    margin-top: -5.5em;
-    margin-right: -12em;
+    margin-top: -6em;
+    margin-right: -14em;
 }
 
 #submit_button {
