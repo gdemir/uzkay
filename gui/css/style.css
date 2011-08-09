@@ -1,67 +1,5 @@
 html {
 }
-#banner {
-    height:60px;
-    padding: 10px;
-    margin: -10px;
-    margin-bottom: 40px;
-    background: url(../images/header.png);
-}
-#info {
-    width: 1600px;
-    margin:auto;
-    margin-left:-180px;
-    background: #fff;
-    padding: 20px;
-    height:auto;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    margin-top:78%;
-    text-align:center;
-}
-#logo {
-    width: 920px;
-    margin: 30px auto 30px;
-    background: #fff;
-    padding: 20px;
-    height: auto;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    box-shadow:0 2px 2px rgba(0,0,0,0.2);
-}
-#image-box {
-    height:auto;
-    width:135px; /* width:930px */
-    height:135px;
-    margin-top:20px;
-    float:left;
-    font-size:13px;
-    background: #fff;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    box-shadow:0 2px 2px rgba(0,0,0,0.2);
-}
-#image-box tr img {width:128px;height:128px;} /*75*/
-#image-box tr{font-size:12px;font-weight:bold;width:100px;}
-
-
-.image_with_name{
-    background-size:50px;
-    background-position:left;
-    background-repeat:no-repeat;
-    height:50px;
-    padding-left:55px;
-}
 
 body {
     font-family: "Helvetica Neue", Helvetica, Corbel, Arial, sans-serif;
@@ -108,15 +46,6 @@ a {
     -moz-outline-style: none;
     text-decoration:none
 }
-
-.header {
-    background:url(../images/header.png) repeat-x;
-    overflow: hidden;
-    position: relative;
-    height: 81px;
-}
-
-
 
 /* ------------- wrapper - header ------------------------- */
 
