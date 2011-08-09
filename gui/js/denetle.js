@@ -28,7 +28,7 @@ function validateAllSteps(){
   }
 
   if(!isStepValid){
-    $('#wizard').smartWizard('showMessage','Please correct the errors in the steps and continue');
+    $('#wizard').smartWizard('showMessage','Lütfen tüm adımlardaki hataları düzelterek devam edin');
   }
 
   return isStepValid;

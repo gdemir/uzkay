@@ -51,3 +51,4 @@
 }
 #image-box tr img {width:128px;height:128px;} /*75*/
 #image-box tr{font-size:12px;font-weight:bold;width:100px;}
+#content {min-height:0px;}

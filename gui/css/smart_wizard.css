@@ -11,7 +11,6 @@
   display:block;
   margin:0;
   padding:0;
-  border: 0px solid #CCC;
   overflow:visible;
   float:left;
   width:980px;
@@ -21,48 +20,45 @@
 .swMain .stepContainer {
   display:block;
   position: relative;
-  margin: 0;
-  padding:0;    
-  border: 0px solid #CCC;    
-  overflow:hidden;
+  margin: auto;
   clear:both;
-  height:300px;
+  height:400px;
 }
 
 .swMain .stepContainer div.content {
   display:block;
-  position: absolute;  
+  position: absolute;
   float:left;
   margin: 0;
-  padding:5px;    
-  border: 1px solid #CCC; 
+  padding:5px;
   font: normal 12px Verdana, Arial, Helvetica, sans-serif; 
-  color:#5A5655;   
+  color:#5A5655;
   background-color:#F8F8F8;  
   height:300px;
+
   text-align:left;
-  overflow:visible;    
-  z-index:88; 
-  -webkit-border-radius: 5px;
-  -moz-border-radius  : 5px;
+  overflow:visible;
+  z-index:88;
 /* FIXME */
-  width:950px;
   clear:both;
-  background-color:#fff;
+  width:950px;
+  background: #fff;
+  height:auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
   -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-  box-shadow:0 2px 2px rgba(0,0,0,0.2);
+  box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .swMain div.actionBar {
   display:block;
   position: relative; 
   clear:both;
-  margin:             3px 0 0 0;   
-  border:             1px solid #CCC;
+  margin:             5px 0 0 0;   
   padding:            0;    
   color:              #5A5655;   
-  background-color:   #F8F8F8;
   height:40px;
   text-align:left;
   overflow:auto;    
@@ -74,9 +70,12 @@
   width:958px;
 /* FIXME */
   background-color:   #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
   -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-  box-shadow:0 2px 2px rgba(0,0,0,0.2);
+  box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .swMain .stepContainer .StepTitle {
@@ -155,23 +154,23 @@
 }
 .swMain ul.anchor li a.selected{
   color:#F8F8F8;
-  background: #EA8511;  /* EA8511 */
-  border: 1px solid #EA8511;
+  background: #2f7ca2;  /* EA8511 */
+  border: 1px solid #2f7ca2;
   cursor:text;
   -moz-box-shadow: 5px 5px 8px #888;
   -webkit-box-shadow: 5px 5px 8px #888;
-  box-shadow: 5px 5px 8px #888;
+  box-shadow: 5px 5px 20px #888;
 }
 .swMain ul.anchor li a.selected:hover {
-  color:#F8F8F8;  
-  background: #EA8511;  
+  color:#F8F8F8;
+  background: #2f7ca2;
 }
 
-.swMain ul.anchor li a.done { 
+.swMain ul.anchor li a.done {
   position:relative;
-  color:#FFF;  
-  background: #8CC63F;  
-  border: 1px solid #8CC63F;   
+  color:#FFF;
+  background: #8CC63F;
+  border: 1px solid #8CC63F;
   z-index:99;
 }
 .swMain ul.anchor li a.done:hover {
