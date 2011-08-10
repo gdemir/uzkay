@@ -177,6 +177,20 @@ function validateStep2(){
 }
 function validateStep3(){
   var state = true;
+  if (hata = control('istel',
+        {
+        'dolu':     [true,   'İş telefonu boş bırakılamaz'],
+        'tamsayi':  [true,   'İş telefonu tamsayi olmalıdır'],
+        'basolmaz': [0,      'İş telefonu başta 0 olmadan yazınınz'],
+        'esit':     [10,     'İş telefonu 10 haneli olmalıdır'],
+        }
+        ))
+  {
+    $('#msg_istel').html(error_message(hata)).show();
+    state = false;
+  } else
+    $('#msg_istel').html('').hide();
+
   require = {
     'calismakurum': 'Çalışma kurum',
     'calismabirim': 'Çalışma birimi',

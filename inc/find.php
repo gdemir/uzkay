@@ -61,6 +61,7 @@ if (! F3::exists('error')) {
 		F3::set('SESSION.is', array(
 				"Kurum : " => $kul->calismakurum,
 				"Birim : " => $kul->calismabirim,
+				"İş Tel : " => $kul->istel,
 				"İl : " => $kul->isil,
 				"İlçe : " => $kul->isilce,
 		));

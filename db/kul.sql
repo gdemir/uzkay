@@ -22,6 +22,7 @@ create table if not exists kul (
   calismakurum varchar(100),
   calismabirim varchar(100),
   isadres varchar(100),
+  istel varchar(10),
   isil varchar(32),
   isilce varchar(32),
   onkayit varchar(1),

@@ -77,5 +77,5 @@ if (! F3::exists('error')) {
 
 // hata var, dön başa ve tekrar kayıt al.
 // error alanı dolu ve layout.htm'de görüntülenecek
-F3::call('goster.php');
+F3::call('new.php');
 ?>
