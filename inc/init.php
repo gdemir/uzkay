@@ -58,6 +58,7 @@ function pdf($kul) {
 		'İş Bilgiler' => array(
 			'calismakurum'	=> 'Kurum',
 			'calismabirim'	=> 'Birim',
+			'istel'		=> 'İş Tel',
 			'isil'		=> 'İl',
 			'isilce'	=> 'İlçe',
 		),
