@@ -45,7 +45,8 @@ if (! F3::exists('error')) {
 
 	// artık elimizde temiz bir tc no var, resmi kaydedelim ilk kurulum sırasında bu <uploaddir> dizinini oluştur
 	// php prosesi yazacağına göre izinleri doğru ayarla chgrp -R www-data <uploaddir> && chmod g+w <uploaddir>
-
+	if($kul->dogumulke=="")
+		$kul->dogumulke="Türkiye";
 	$tc = $kul->tc;
 	F3::set('tc', $tc);
 

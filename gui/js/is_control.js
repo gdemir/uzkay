@@ -20,9 +20,7 @@ function is_tc(tc) {
     else
 	return false;
 }
-function is_int(value){                                                                                                                 
-        for (i = 0 ; i < value.length ; i++) {                                                                                          
-                if ((value.charAt(i) < '0') || (value.charAt(i) > '9')) return false;                                                   
-        }                                                                                                                               
-        return true;                                                                                                                    
-}                                                                                                                                       
+function is_serino(value) {
+        var regexp = /([a-zA-ZsçÇöÖşŞıİğĞüÜ]{1})([0-9]{1})([0-9]{1})/;
+        return value.match(regexp);
+}

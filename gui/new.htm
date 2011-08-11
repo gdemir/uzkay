@@ -43,7 +43,7 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
       <span class="stepDesc">Diğer Bilgiler</span>
     </a></li>
       </ul>
-<div id="step-1" style="height:810px;">
+<div id="step-1" style="height:900px;">
     <table class="custom">
     <tr>
       <td>
@@ -53,34 +53,53 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
       </td>
     </tr>
     <tr>
+      <td class="info" colspan="3">
+        <strong>Kişisel bilgiler</strong> formunu doldurmak için gerekli tüm 
+        bilgileri <strong>Nüfus Cüzdanınızı</strong> baz alarak doldurunuz.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><span>Resim 500 KB'ı geçmemeli, JPEG formatında olmalıdır.</span></td>
+    </tr>
+    <tr>
+      <td class="label">Resim (vesikalık resminiz):</td>
+      <td class="field"><input type="file" name="file" id="file"/></td>
+    </tr>
+    <tr>
       <td class="label">TC Kimlik No (*):</td>
-      <td class="field"><input class="validate[required] text-input" type="text" 
-        name="tc" id= "tc" value="{{@REQUEST.tc}}" maxlength = 11  /></td>
+      <td class="field"><input type="text" name="tc" id= "tc" 
+        value="{{@REQUEST.tc}}" maxlength=11  /></td>
       <td><span id="msg_tc"></span></td>
     </tr>
     <tr>
       <td class="label"> Ad    (*):</td>
-      <td class="field"><input  type="text" name="ad" id = "ad" value="{{@REQUEST.ad}}" maxlength = 40 /></td>
+      <td class="field"><input type="text" name="ad" id="ad" 
+        value="{{@REQUEST.ad}}" maxlength=40 /></td>
       <td><span id="msg_ad"></span></td>
     </tr>
     <tr>
       <td class="label"> Soyad (*):</td>
-      <td class="field"><input  type="text" name="soyad" id = "soyad" value="{{@REQUEST.soyad}}"  maxlength=40 /></td>
+      <td class="field"><input type="text" name="soyad" id="soyad" 
+        value="{{@REQUEST.soyad}}"  maxlength=40 /></td>
       <td><span id="msg_soyad"></span></td>
     </tr>
     <tr>
-      <td class="label">Kızlık Soyadı (*):</td>
-      <td class="field"><input  type="text" name = "kizliksoyad" id = "kizliksoyad" value="{{@REQUEST.kizliksoyad}}"  /></td>
+      <td class="label">Kızlık Soyadı(Önceki Soyadı) (*):</td>
+      <td class="field"><input type="text" name="kizliksoyad" id=
+        "kizliksoyad" value="{{@REQUEST.kizliksoyad}}"  /></td>
       <td><span id="msg_kizliksoyad"></span></td>
     </tr>
     <tr>
       <td class="label">Baba Adı (*):</td>
-      <td class="field"><input  type="text" name = "babaad"   id = "babaad" value="{{@REQUEST.babaad}}"     /></td>
+      <td class="field"><input type="text" name="babaad"   id="babaad" 
+        value="{{@REQUEST.babaad}}"     /></td>
       <td><span id="msg_babaad"></span></td>
     </tr>
     <tr>
       <td class="label">Ana Adı (*):</td>
-      <td class="field"><input  type="text" name = "anaad"    id = "anaad" value="{{@REQUEST.anaad}}"             /></td>
+      <td class="field"><input type="text" name="anaad"    id="anaad" 
+        value="{{@REQUEST.anaad}}"             /></td>
       <td><span id="msg_anaad"></span></td>
     </tr>
     <tr>
@@ -121,6 +140,15 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
       </td>
     </tr>
     <tr>
+      <td></td>
+      <td>Yurt dışı doğumlular "ilçe" alanında yurt dışı il girebilir.</td>
+    </tr>
+    <tr>
+      <td class="label">Doğum Yeri - İlçe (*):</td>
+      <td class="field"><input  type="text" name="dogumilce" id="dogumilce" value="{{@REQUEST.dogumilce}}" maxlength="20"  /></td>
+      <td><span id="msg_dogumilce"></span></td>
+    </tr>
+    <tr>
       <td class="label">Doğum Yeri - İl (*):</td>
       <td class="field">
         <select id="dogumil" name="dogumil" >
@@ -133,15 +161,6 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
         </select>
       </td>
       <td><span id="msg_dogumil"></span></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>Yurt dışı doğumlular "ilçe" alanında yurt dışı il girebilir.</td>
-    </tr>
-    <tr>
-      <td class="label">Doğum Yeri - İlçe (*):</td>
-      <td class="field"><input  type="text" name = "dogumilce" id = "dogumilce" value="{{@REQUEST.dogumilce}}" maxlength = "20"  /></td>
-      <td><span id="msg_dogumilce"></span></td>
     </tr>
     <tr>
       <td></td>
@@ -160,15 +179,6 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
           </F3:repeat>
         </select>
       </td>
-
-    </tr>
-    <tr>
-      <td class="label">Resim (vesikalık resminiz):</td>
-      <td class="field"><input type="file" name="file" id="file"/></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td class="field"><span>Resim 500 KB'ı geçmemeli,JPEG formatında olmalıdır.</span></td>
     </tr>
   </table>
 </div>
@@ -182,6 +192,12 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
       <td></td>
     </tr>
     <tr>
+      <td class="info" colspan="3">
+        <strong>İletişim bilgiler</strong> formunudaki bilgiler size 
+        ulaşabileceğimiz bilgilerdir.
+      </td>
+    </tr>
+    <tr>
       <td></td>
       <td>
         Telefon numaralarını başta 0 olmadan 10 haneli olacak şekilde aralarda 
@@ -190,24 +206,24 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
     </tr>
     <tr>
       <td class="label">Cep tel    (*):</td>
-      <td class="field"><input  type="text" name = "ceptel" id = 
-        "ceptel" value="{{@REQUEST.ceptel}}" maxlength = 10 /></td>
+      <td class="field"><input  type="text" name="ceptel" id=
+        "ceptel" value="{{@REQUEST.ceptel}}" maxlength=10 /></td>
       <td><span id="msg_ceptel"></span></td>
     </tr>
     <tr>
       <td class="label">Ev tel        :</td>
-      <td class="field"><input                  type="text" name = "evtel" id = 
-        "evtel" value="{{@REQUEST.evtel}}" maxlength = 10 /></td>
+      <td class="field"><input                  type="text" name="evtel" id=
+        "evtel" value="{{@REQUEST.evtel}}" maxlength=10 /></td>
     </tr>
     <tr>
       <td class="label">Email       (*):</td>
-      <td class="field"><input type="text" name = "email"  id = "email" 
+      <td class="field"><input type="text" name="email"  id="email" 
           value="{{@REQUEST.email}}"               /></td>
       <td><span id="msg_email"></span></td>
     </tr>
     <tr>
       <td class="label">Ev adres   (*):</td>
-      <td class="field"><textarea  type="text" name = "evadres"  id = "evadres" 
+      <td class="field"><textarea  type="text" name="evadres"  id="evadres" 
           value="{{@REQUEST.evadres}}"         ></textarea></td>
       <td><span id="msg_evadres"></span></td>
     </tr>
@@ -229,8 +245,8 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
     <tr>
       <td class="label">İlçe        (*):</td>
       <td class="field">
-      <input  type="text" name = "ilce" id = "ilce" 
-      value="{{@REQUEST.ilce}}" maxlength = "20"  />
+      <input  type="text" name="ilce" id="ilce" 
+      value="{{@REQUEST.ilce}}" maxlength="20"  />
     </td>
       <td><span id="msg_ilce"></span></td>
     </tr>
@@ -243,12 +259,12 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
     </tr>
     <tr>
       <td class="label">Üniversite  (*):</td>
-      <td class="field"><input  type="text" name = "uni"    id = "uni" value="{{@REQUEST.uni}}"    	           /></td>
+      <td class="field"><input  type="text" name="uni"    id="uni" value="{{@REQUEST.uni}}"    	           /></td>
       <td><span id="msg_uni"></span></td>
     </tr>
     <tr>
       <td class="label">Yüksek Okul (*):</td>
-      <td class="field"><input  type="text" name = "yokul"  id = "yokul" value="{{@REQUEST.yokul}}"   	   /></td>
+      <td class="field"><input  type="text" name="yokul"  id="yokul" value="{{@REQUEST.yokul}}"   	   /></td>
       <td><span id="msg_yokul"></span></td>
     </tr>
   </table>
@@ -261,6 +277,12 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
       </td>
     </tr>
     <tr>
+      <td class="info" colspan="3">
+        <strong>İş bilgiler</strong> formunudaki bilgiler sizin çalıştığınız iş 
+        yeri hakkındaki bilgilerdir.
+      </td>
+    </tr>
+    <tr>
       <td></td>
       <td>
         Aşağıdaki tüm bilgileri çalıştığınız yeri baz alarak doldurunuz.
@@ -268,24 +290,24 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
     </tr>
     <tr>
       <td class="label">Kurum (*):</td>
-      <td class="field"><input  type="text" name = "calismakurum"  id = "calismakurum" value="{{@REQUEST.calismakurum}}"/></td>
+      <td class="field"><input  type="text" name="calismakurum"  id="calismakurum" value="{{@REQUEST.calismakurum}}"/></td>
       <td><span id="msg_calismakurum"></span></td>
     </tr>
     <tr>
       <td class="label">Birim (*):</td>
-      <td class="field"><input  type="text" name = "calismabirim"  id = "calismabirim" value="{{@REQUEST.calismabirim}}"/></td>
+      <td class="field"><input  type="text" name="calismabirim"  id="calismabirim" value="{{@REQUEST.calismabirim}}"/></td>
       <td><span id="msg_calismabirim"></span></td>
     </tr>
     <tr>
       <td class="label">Adres (*):</td>
-      <td class="field"><textarea  type="text" name = "isadres" id = "isadres" 
+      <td class="field"><textarea  type="text" name="isadres" id="isadres" 
           value="{{@REQUEST.isadres}}"></textarea></td>
       <td><span id="msg_isadres"></span></td>
     </tr>
     <tr>
-      <td class="label">İş tel    (*):</td>
-      <td class="field"><input  type="text" name = "istel" id = "istel" 
-        value="{{@REQUEST.istel}}" maxlength = 10 /></td>
+      <td class="label">Tel    (*):</td>
+      <td class="field"><input  type="text" name="istel" id="istel" 
+        value="{{@REQUEST.istel}}" maxlength=10 /></td>
       <td><span id="msg_istel"></span></td>
     </tr>
     <tr>
@@ -304,7 +326,7 @@ denetle.js, is_controldeki + turkish + wizard + fonksiyonlarını kullanıyor.
     </tr>
     <tr>
       <td class="label">İlçe (*):</td>
-      <td class="field"><input  type="text" name = "isilce" id = "isilce" value="{{@REQUEST.isilce}}" maxlength = "20"  /></td>
+      <td class="field"><input  type="text" name="isilce" id="isilce" value="{{@REQUEST.isilce}}" maxlength="20"  /></td>
       <td><span id="msg_isilce"></span></td>
     </tr>
   </table>

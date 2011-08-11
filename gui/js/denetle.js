@@ -63,7 +63,8 @@ function control(verilen, tarif) {
       case 'enaz':     hata = Number(un) < kosul;break;
       case 'enfazla':  hata = Number(un) > kosul;break;
       case 'basolmaz': hata = kosul == un[0];break;
-      case 'tamsayi':  hata = kosul && !is_int(un);break;
+      case 'tamsayi':  hata = kosul && !un.match(/^[0-9]+$/);break;
+      case 'karakter': hata = kosul && !un.match(/^[a-zA-ZsçÇöÖşŞıİğĞüÜ\-]+$/);break;
       case 'ozel':     hata = !eval(kosul+"('"+un+"')");break;
     }
     if(hata)
