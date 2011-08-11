@@ -5,7 +5,7 @@ function is_email(emailAddress) {
 }
 function is_tc(tc) {
     var tc, on, onbir;
-    if (tc.length != 11) return false;
+    if (tc.length != 11 || tc == 0) return false;
     on =
 	((((Number(tc[0]))+Number(tc[2])+Number(tc[4])+Number(tc[6])+Number(tc[8]))*7)
 	 -(Number(tc[1])+Number(tc[3])+Number(tc[5])+Number(tc[7])))%10;
@@ -13,7 +13,7 @@ function is_tc(tc) {
 	(Number(tc[0])+Number(tc[1])+Number(tc[2])+Number(tc[3])+Number(tc[4])+
 	 Number(tc[5])+Number(tc[6])+Number(tc[7])+Number(tc[8])+Number(tc[9]))%10;
 
-    if (!on || !onbir) return false;
+    if (on == undefined || onbir == undefined) return false;
 
     if (String(on) + String(onbir) == tc.substring(9,11))
         return true;
