@@ -45,6 +45,22 @@ if (! F3::exists('error')) {
 
 	// artık elimizde temiz bir tc no var, resmi kaydedelim ilk kurulum sırasında bu <uploaddir> dizinini oluştur
 	// php prosesi yazacağına göre izinleri doğru ayarla chgrp -R www-data <uploaddir> && chmod g+w <uploaddir>
+	$ev_split = preg_split('[\n]', $kul->evadres);
+	$ev = "";
+	foreach($ev_split as $k)
+		$ev = $ev . ' ' . rtrim($k);
+	$ev = preg_split('[,]', $ev);
+	$ev = implode($ev, ' ');
+	$kul->evadres = $ev;
+
+	$is_split = preg_split('[\n]', $kul->isadres);
+	$is = "";
+	foreach($is_split as $k)
+		$is = $is . ' ' . rtrim($k);
+	$is = preg_split('[,]', $is);
+	$is = implode($is, ' ');
+	$kul->isadres = $is;
+
 	if($kul->dogumulke=="")
 		$kul->dogumulke="Türkiye";
 	$tc = $kul->tc;

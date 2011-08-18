@@ -13,21 +13,25 @@
     </tr>
     <tr>
       <td class="label">TC Kimlik No (*):</td>
-      <td class="field"><input class="required" type="text" name="tc" id= "tc" 
-        value="{{@REQUEST.tc}}" maxlength = 11  /></td>
+      <td class="field"><input class="required" type="text" name="tc" id="tc" 
+        value="{{@REQUEST.tc}}" maxlength = 11
+        placeholder="Tc kimlik numaranızı yazın"/>
+      </td>
     </tr>
     <tr>
       <td class="label">Kızlık Soyadı (*):</dt>
         <td class="field">
-          <input class="required" type="text" name = "kizliksoyad" id = 
-          "kizliksoyad" value="{{@REQUEST.kizliksoyad}}"  />
+          <input type="text" name="kizliksoyad" id="kizliksoyad"
+          value="{{@REQUEST.kizliksoyad}}"
+          placeholder="Kızlık soyadınızı yazın"/>
         </td>
       </tr>
       <tr>
         <td class="label">Onay Kodu (*):</td>
         <td class="field">
-          <input class="required" type="text"
-          name="captcha" id="captcha" size=30/>
+          <input type="text"
+          name="captcha" id="captcha" size=30
+        placeholder="Sağdaki güvenlik kodunu yazın"/>
         </td>
       </tr>
       <tr>

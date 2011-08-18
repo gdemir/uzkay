@@ -62,6 +62,7 @@ if (! F3::exists('error')) {
 				"Kurum : " => $kul->calismakurum,
 				"Birim : " => $kul->calismabirim,
 				"İş Tel : " => $kul->istel,
+				"İş Adres : " => $kul->isadres,
 				"İl : " => $kul->isil,
 				"İlçe : " => $kul->isilce,
 		));
