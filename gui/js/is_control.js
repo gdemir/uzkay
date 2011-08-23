@@ -15,7 +15,7 @@ function is_tc(tc) {
 
     if (on == undefined || onbir == undefined) return false;
 
-    if (String(on) + String(onbir) == tc.substring(9,11))
+    if (String((on < 0) ? on + 10 : on) + String(onbir) == tc.substring(9, 11))
         return true;
     else
 	return false;
